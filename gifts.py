@@ -30,9 +30,9 @@ def sim():
     
     gift_taken = [None]*NO_PEOPLE
     for score in range(NO_PEOPLE-1, 0, -1):
-        print("Score == "+str(score))
+        #print("Score == "+str(score))
         for gid in range(0, NO_PEOPLE):
-            print("\tGift ID == "+str(gid))
+            #print("\tGift ID == "+str(gid))
             if gift_taken[gid] == None: # The gift is not taken
                 if gift_scores[gid].count(score) == 0:
                     pass
@@ -41,13 +41,13 @@ def sim():
                     gift_taken[gid] = pid
                     for scores in gift_scores:
                         scores[pid] = 0
-                    print("\tThe gitf "+str(gid)+" is taken by #"+str(pid))
+                    #print("\tThe gitf "+str(gid)+" is taken by #"+str(pid))
                 else:
                     indices = [i for i, x in enumerate(gift_scores[gid]) if x == score]
                     tokens = [0]*NO_PEOPLE
                     for i in indices:
                         tokens[i] = sum(gift_scores[i])
-                    print("\tCandidates == "+str(tokens))
+                    #print("\tCandidates == "+str(tokens))
                     max_token = max(tokens)
                     pid = -1
                     if tokens.count(max_token) == 1:
@@ -58,9 +58,8 @@ def sim():
                     gift_taken[gid] = pid
                     for scores in gift_scores:
                         scores[pid] = 0
-                    print("\tThe gitf "+str(gid)+" is taken by #"+str(pid))
-    print("gift_taken: ")
-    print(gift_taken)
+                    #print("\tThe gitf "+str(gid)+" is taken by #"+str(pid))
+    print("gift_taken: "+str(gift_taken))
 
 
 if __name__ == "__main__":
