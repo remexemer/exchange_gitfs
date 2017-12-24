@@ -4,8 +4,14 @@ from __future__ import print_function
 import random
 
 NO_PEOPLE=10
+NO_SIM=100
 
 def main():
+    for i in range(0, NO_SIM):
+        random.seed(i)
+        sim()
+
+def sim():
     print("people_scores: ")
     people_scores = [None]*NO_PEOPLE
     for i in range(NO_PEOPLE):
