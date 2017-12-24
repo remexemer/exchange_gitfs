@@ -59,6 +59,8 @@ def sim():
                     for scores in gift_scores:
                         scores[pid] = 0
                     #print("\tThe gitf "+str(gid)+" is taken by #"+str(pid))
+    if gift_taken.count(None) > 1:
+        print("Error!")
     print("gift_taken: "+str(gift_taken))
 
 
