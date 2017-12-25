@@ -3,23 +3,31 @@
 from __future__ import print_function
 import random
 
-NO_PEOPLE=10
+NO_PEOPLE=8
 NO_SIM=100
 
 def main():
-    for i in range(0, NO_SIM):
-        random.seed(i)
-        sim()
+    sim()
 
 def sim():
     print("people_scores: ")
     people_scores = [None]*NO_PEOPLE
+    people_scores[0] = [0,4,7,6,1,5,3,2]
+    people_scores[1] = [3,0,5,1,7,4,6,2]
+    people_scores[2] = [6,3,0,2,1,4,5,7]
+    people_scores[3] = [1,7,4,0,3,6,5,2]
+    people_scores[4] = [7,6,2,3,0,5,4,1]
+    people_scores[5] = [7,5,4,3,2,0,6,1]
+    people_scores[6] = [7,3,5,6,1,4,0,2]
+    people_scores[7] = [6,5,2,3,4,7,1,0]
     for i in range(NO_PEOPLE):
+        """
         people_scores[i] = (list(range(0, NO_PEOPLE)))
         random.shuffle(people_scores[i])
         zero_pos = people_scores[i].index(0)
         if zero_pos != i:
             people_scores[i][zero_pos], people_scores[i][i] = people_scores[i][i], people_scores[i][zero_pos]
+        """
         print(people_scores[i])
     
     print("gift_scores: ") # The transport of people_scores
